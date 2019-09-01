@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cat <<'EOF' | mysql -uroot
+cat <<'EOF' | mysql -h 127.0.0.1 -uroot -ppass
 CREATE USER 'isucon'@'%' IDENTIFIED BY 'isucon';
 GRANT ALL ON torb.* TO 'isucon'@'%';
-CREATE USER 'isucon'@'localhost' IDENTIFIED BY 'isucon';
-GRANT ALL ON torb.* TO 'isucon'@'localhost';
+CREATE USER 'isucon'@'127.0.0.1' IDENTIFIED BY 'isucon';
+GRANT ALL ON torb.* TO 'isucon'@'127.0.0.1';
 EOF
